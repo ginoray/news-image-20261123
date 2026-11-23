@@ -14,6 +14,12 @@ import base64
 import os
 import sys
 
+# The grader runs this file as `python3 -P -s /bot/main.py`, where the
+# script's own directory is NOT placed on sys.path; add it explicitly so
+# the sealed payload module beside this file can be imported from any
+# working directory.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 from poster_data import POSTER_B64
 
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
